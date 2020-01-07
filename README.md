@@ -1,6 +1,6 @@
 # BoExile
-#AI bot and network manipulator for PoE
-#Currently outdated!
+AI bot and network manipulator for PoE
+Currently outdated!
 
 Every object is an entity. Every entity contains a list of Components. A component is a data structure containing relevant info (file name of entity, 
 string representing which component it is, a hash key, and any relevant data to that component based on its' string name.
