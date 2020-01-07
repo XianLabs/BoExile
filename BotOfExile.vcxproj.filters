@@ -1,0 +1,316 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Framework">
+      <UniqueIdentifier>{83eea489-44df-45bf-82f8-bfb892a3b7ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network">
+      <UniqueIdentifier>{ac3e3825-85e8-4007-a2f6-0cddf3615bb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\Packets">
+      <UniqueIdentifier>{b1ba97fc-0dad-47db-965e-46bafaddd4b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Components">
+      <UniqueIdentifier>{4c9560cf-54b6-478d-93ae-138472705845}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Elements">
+      <UniqueIdentifier>{6d6cd7e7-7644-461a-b788-3dcae4ff5ae4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GUI">
+      <UniqueIdentifier>{489701c0-ae72-4e5d-a7aa-9a86e6361245}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Framework\Entity">
+      <UniqueIdentifier>{ed04b2ec-61f1-48d0-aa34-79b50bec6e53}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bots">
+      <UniqueIdentifier>{54b8ae32-c4dc-4330-85d8-03fe93dfde69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Utilities">
+      <UniqueIdentifier>{2a3b397b-fa64-4b43-8270-389b8c68eee0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ASM">
+      <UniqueIdentifier>{ecbbbf9d-6eb2-4901-ae87-c363e683ac0b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="MemoryWriter">
+      <UniqueIdentifier>{05f4b4fa-df10-4320-a676-1268c8e991ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="mhook-lib">
+      <UniqueIdentifier>{2a9db28e-d341-4e19-89b8-95d31ad2344f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="disasm-lib">
+      <UniqueIdentifier>{3641c0a4-8a4a-42c0-b56e-07f47ddc9971}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Network\AntiCrack">
+      <UniqueIdentifier>{089447e9-3409-4453-9dc3-a24e54f84452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="LUA">
+      <UniqueIdentifier>{0ea0e0cb-52a8-4afc-ada4-7d48146a30a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Security">
+      <UniqueIdentifier>{732c2347-61f5-4d18-baf6-b3beb069d123}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Framework\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="MyForm.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketBuilder.cpp">
+      <Filter>Network\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="Packets.cpp">
+      <Filter>Network\Packets</Filter>
+    </ClCompile>
+    <ClCompile Include="MathHelper.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Hacks.cpp">
+      <Filter>MemoryWriter</Filter>
+    </ClCompile>
+    <ClCompile Include="mhook.cpp">
+      <Filter>mhook-lib</Filter>
+    </ClCompile>
+    <ClCompile Include="cpu.c">
+      <Filter>disasm-lib</Filter>
+    </ClCompile>
+    <ClCompile Include="disasm.c">
+      <Filter>disasm-lib</Filter>
+    </ClCompile>
+    <ClCompile Include="disasm_x86.c">
+      <Filter>disasm-lib</Filter>
+    </ClCompile>
+    <ClCompile Include="Blowfish.cpp">
+      <Filter>Network\AntiCrack</Filter>
+    </ClCompile>
+    <ClCompile Include="NetLogger.cpp">
+      <Filter>Network\AntiCrack</Filter>
+    </ClCompile>
+    <ClCompile Include="Hook.cpp">
+      <Filter>MemoryWriter</Filter>
+    </ClCompile>
+    <ClCompile Include="Positioned.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="BotBase.cpp">
+      <Filter>Bots</Filter>
+    </ClCompile>
+    <ClCompile Include="PacketControls.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="Targetable.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Life.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="DLLMain.cpp" />
+    <ClCompile Include="LocalActor.cpp">
+      <Filter>Framework\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="HideDLL.cpp">
+      <Filter>Security</Filter>
+    </ClCompile>
+    <ClCompile Include="Hotkeys.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="Chest.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="CComponent.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="ObjectMagicProperties.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="LUAWrapper.cpp">
+      <Filter>LUA</Filter>
+    </ClCompile>
+    <ClCompile Include="FileIO.cpp">
+      <Filter>Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="AreaTransition.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="PathFinder.cpp">
+      <Filter>Bots</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Inventories.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Actor.cpp">
+      <Filter>Framework\Components</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MyForm.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.hpp">
+      <Filter>Framework\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryOffsets.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketWriter.hpp">
+      <Filter>Network\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="Packets.hpp">
+      <Filter>Network\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketBuilder.hpp">
+      <Filter>Network\Packets</Filter>
+    </ClInclude>
+    <ClInclude Include="MathHelper.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Structures.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Hacks.hpp">
+      <Filter>MemoryWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="mhook.h">
+      <Filter>mhook-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="cpu.h">
+      <Filter>disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="disasm.h">
+      <Filter>disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="disasm_x86.h">
+      <Filter>disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="disasm_x86_tables.h">
+      <Filter>disasm-lib</Filter>
+    </ClInclude>
+    <ClInclude Include="ASMExterns.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Blowfish.hpp">
+      <Filter>Network\AntiCrack</Filter>
+    </ClInclude>
+    <ClInclude Include="NetLogger.hpp">
+      <Filter>Network\AntiCrack</Filter>
+    </ClInclude>
+    <ClInclude Include="Pointer.hpp">
+      <Filter>MemoryWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="Hook.hpp">
+      <Filter>MemoryWriter</Filter>
+    </ClInclude>
+    <ClInclude Include="Positioned.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="BotBase.hpp">
+      <Filter>Bots</Filter>
+    </ClInclude>
+    <ClInclude Include="PacketControls.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Targetable.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="LUA\lauxlib.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="LUA\lua.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="LUA\lua.hpp">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="LUA\luaconf.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="LUA\lualib.h">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="Life.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="LocalActor.hpp">
+      <Filter>Framework\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="HideDLL.hpp">
+      <Filter>Security</Filter>
+    </ClInclude>
+    <ClInclude Include="Hotkeys.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="Chest.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="CComponent.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="ObjectMagicProperties.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="LUAWrapper.hpp">
+      <Filter>LUA</Filter>
+    </ClInclude>
+    <ClInclude Include="FileIO.hpp">
+      <Filter>Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="AreaTransition.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="PathFinder.hpp">
+      <Filter>Bots</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Inventories.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Actor.hpp">
+      <Filter>Framework\Components</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="MyForm.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PacketControls.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <MASM Include="Hooks.asm">
+      <Filter>ASM</Filter>
+    </MASM>
+    <MASM Include="Functions.asm">
+      <Filter>ASM</Filter>
+    </MASM>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="LUA\lua52.lib">
+      <Filter>LUA</Filter>
+    </Library>
+  </ItemGroup>
+</Project>
