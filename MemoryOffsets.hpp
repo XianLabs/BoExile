@@ -33,7 +33,7 @@ CONST UINT64 AccountNameOffset = 0x1EF3D40; //0F 11 05 ? ? ? ? 0F 10 4D 80 0F 11
 CONST UINT64 AreaChangeOffset = 0x0000000;
 
 //Lights, etc
-CONST UINT64 MapLightExpanseOffset = 0x13BE98A; //F2 0F 11 44 24 20 F3 0F 5F -> above movd mxx3,[rsp+b8]
+CONST UINT64 MapLightExpanseOffset = 0x13BE98A; //F2 0F 11 44 24 20 F3 0F 5F -> above movd mxm3,[rsp+b8]
 
 CONST UINT64 ZoomHackOffset = 0x6031BE + 0x3; //77 03 0F 28 D1 F3 0F 11 93 ? 13 00 00 C6 07 01 48 8B 74 24 40
 
