@@ -14,8 +14,7 @@ BOOL IsLoggingSendPackets = FALSE;
 
 short changeEndianness16(short val)
 {
-	return (val << 8) |          // left-shift always fills with zeros
-		((val >> 8) & 0x00ff); // right-shift sign-extends, so force to zero
+	return (val << 8) | ((val >> 8) & 0x00ff); // right-shift sign-extends, so force to zero
 }
 
 int rand_lim(int limit) 
