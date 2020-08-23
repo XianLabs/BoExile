@@ -17,31 +17,35 @@ VOID Entity::SetVector2(UINT32 x, UINT32 y, BOOL WritePtr)
 
 	if (WritePtr) //needs changing.
 	{
-		WritePointer<UINT32>(this->GetMemoryAddress(), 0xE8, x);
-		WritePointer<UINT32>(this->GetMemoryAddress(), 0xEC, y);
+		WritePointer<UINT32>(this->GetMemoryAddress(), 0xEC, x);
+		WritePointer<UINT32>(this->GetMemoryAddress(), 0xF0, y);
 	}
 }
 
 //Wrapper to fill entity with requires memory stuff
 BOOL Entity::SetInfo(UINT64 EntityWrapperAddress) //todo: check for failures
 {
+	EntityWrapperAddress += 8;
 	this->SetMemoryAddress(EntityWrapperAddress);
-	UINT32 ID = this->GetIDFromMemory(EntityWrapperAddress);
-	this->SetEntityID(ID);
+	UINT32 ID = this->GetIDFromMemory(EntityWrapperAddress); //start debugging here
+	if (ID != 0)
+	{
+		this->SetEntityID(ID);
+		printf("ID: %u\n", ID);
+	}
+	
 	this->GetFilePathFromMemory(EntityWrapperAddress);
 	this->SetComponentListAddress();
+	printf("Address: %llx\n", this->GetMemoryAddress());
 	this->SetComponentLookupAddress();
 	this->FillComponentList();
 
-	Vector2* v = Entity::GetEntityGridPosition(this);
-	delete v; v = nullptr;
-	
 	return TRUE;
 }
 
 UINT32 Entity::GetIDFromMemory(UINT64 EntityWrapperPtr)
 {
-	UINT64 IDAddress = EntityWrapperPtr + 0x40;
+	UINT64 IDAddress = EntityWrapperPtr + 0x48;
 
 	if (IDAddress != 0)
 	{
@@ -55,9 +59,9 @@ UINT32 Entity::GetIDFromMemory(UINT64 EntityWrapperPtr)
 
 std::wstring Entity::GetFilePathFromMemory(UINT64 EntityListNode)
 {
-	wchar_t arrPath[256];
+	wchar_t arrPath[128];
 
-	UINT64 PathPtr = ReadPointer<UINT64>(EntityListNode, 0x18);
+	UINT64 PathPtr = ReadPointer<UINT64>(EntityListNode, 0x8);
 
 	if (PathPtr == -1)
 		return NULL;
@@ -88,7 +92,7 @@ VOID Entity::FillComponentList()
 		CLN.NamePtr = DereferenceSafe<UINT64>(CLN.NamePtr);
 		CLN.Index = DereferenceSafe<UINT>(CLN.IndexPtr);
 
-		//printf("Current: %llX, NamePtr: %llX, Index: %d\n", CurrentAddress, CLN.NamePtr, CLN.Index);
+		printf("Current: %llX, NamePtr: %llX, Index: %d\n", CurrentAddress, CLN.NamePtr, CLN.Index);
 
 		if (CLN.Index >= 0 && CLN.Index < 128)
 			this->ComponentList.push_back(CLN);
@@ -131,10 +135,11 @@ VOID Entity::SetComponentLookupAddress()
 {
 	UINT64 MemAddr = this->GetMemoryAddress(); //crash issue, fix this
 	this->ComponentLookupAddress = *(UINT64*)MemAddr;
-	this->ComponentLookupAddress = *(UINT64*)(this->ComponentLookupAddress + 0x40);
-	this->ComponentCount = *(UINT*)(this->ComponentLookupAddress + 0x38);
 	this->ComponentLookupAddress = *(UINT64*)(this->ComponentLookupAddress + 0x30);
+	this->ComponentCount = *(UINT*)(this->ComponentLookupAddress + 0x38);
+	this->ComponentLookupAddress = *(UINT64*)(this->ComponentLookupAddress + 0x40);
 	this->ComponentLookupAddress = *(UINT64*)(this->ComponentLookupAddress);
+	printf("ComponentLookup: %llx\n", this->ComponentLookupAddress);
 }
 
 UINT64 Entity::SetComponentListAddress()
@@ -169,8 +174,8 @@ Vector2* Entity::GetEntityGridPosition(Entity* e)
 	if (PositionedComponentPtr == 0)
 		return NULL;
 
-	INT32 X = DereferenceSafe<INT32>(PositionedComponentPtr + 0xE8);
-	INT32 Y = DereferenceSafe<INT32>(PositionedComponentPtr + 0xEC);
+	INT32 X = DereferenceSafe<INT32>(PositionedComponentPtr + 0xEC);
+	INT32 Y = DereferenceSafe<INT32>(PositionedComponentPtr + 0xF0);
 	
 	if (X == 0xDEADBEEF || Y == 0xDEADBEEF)
 	{
