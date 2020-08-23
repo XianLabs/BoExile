@@ -14,20 +14,54 @@ SetSendActionAddress PROC
 SetSendActionAddress ENDP
 
 SendPacket PROC
-; RCX = SendClass
+; RCX = SendClass //CHECK THIS, IT MAY SHUFFLE EVERY SO OFTEN
 ; RDX = Packet Buffer
 ; R8 = Length
+
+    pushfq
     push rax
-	mov rax, [rsp+8h]
+    push rbx
+    push rcx
+    push rdx
+    push rsi
+    push rdi
+    push rbp
+    push rsp
+    push r8
+    push r9
+    push r10
+    push r11
+    push r12
+    push r13
+    push r14
+    push r15
+
     mov rax, rcx ;SendClass
     add rax, 1a8h
-	mov [rax], rdx
-	sub rax, 28h 
+    mov [rax], rdx
+    sub rax, 28h 
     mov [rax], r8 ;get packet buffer address
+    sub rsp, 1000h ;need to add some space (atleast 0x500) as the func itself uses this and will overwrite stack
+    call dqSendPacketFunction
+    add rsp, 1000h
+
+    pop r15
+    pop r14
+    pop r13
+    pop r12
+    pop r11
+    pop r10
+    pop r9
+    pop r8
+    pop rsp
+    pop rbp
+    pop rdi
+    pop rsi
+    pop rdx
+    pop rcx
+    pop rbx
     pop rax
-	sub rsp, 28h ;need to add some space as the func itself uses this and will overwrite stack
-	call dqSendPacketFunction
-	add rsp, 28h
+    popfq
     ret
 SendPacket ENDP
 
